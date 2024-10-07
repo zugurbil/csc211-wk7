@@ -1,0 +1,22 @@
+import java.awt.Color;
+import javax.swing.*;
+
+public class JFrameEx1 {
+
+    public static void main(String[] args) {
+
+        // Create a JFrame object
+        JFrame frame = new JFrame("My First JFrame");
+        frame.setTitle("JFrame Example1");
+        frame.setResizable(false);
+        frame.setSize(400, 300);
+        frame.getContentPane().setBackground(new Color(0,124,123));
+        // Set the default close operation (EXIT_ON_CLOSE closes the application)
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Make the frame visible
+        frame.setVisible(true);
+	    }
+
+}
+

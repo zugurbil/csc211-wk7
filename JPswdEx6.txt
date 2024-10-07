@@ -1,0 +1,57 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JPswdEx6  {
+    public static void main(String[] args) {
+        // Create a new JFrame
+        JFrame frame = new JFrame("JPasswordField Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 200);
+
+        // Create a JLabel for instructions
+        JLabel instructionLabel = new JLabel("Enter your password:");
+        instructionLabel.setBounds(50, 50, 150, 20);
+
+        // Create a JPasswordField
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setBounds(200, 50, 150, 20);
+
+        // Create a JLabel to display the result
+        JLabel resultLabel = new JLabel();
+        resultLabel.setBounds(50, 120, 300, 20);
+
+        // Create a JButton
+        JButton submitButton = new JButton("Submit");
+        submitButton.setBounds(150, 90, 100, 30);
+
+        // Add an ActionListener to the button
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Retrieve password from JPasswordField
+                char[] password = passwordField.getPassword();
+
+                // Convert password to String (Not recommended for real-world applications due to security concerns)
+                String passwordStr = new String(password);
+
+                // Check if the password is correct (for example purposes, password is "secret")
+                if (passwordStr.equals("secret")) {
+                    resultLabel.setText("Password is correct!");
+                } else {
+                    resultLabel.setText("Invalid password.");
+                }
+            }
+        });
+
+        // Add components to the frame
+        frame.setLayout(null);  // Use absolute positioning for simplicity
+        frame.add(instructionLabel);
+        frame.add(passwordField);
+        frame.add(submitButton);
+        frame.add(resultLabel);
+
+        // Make the frame visible
+        frame.setVisible(true);
+    }
+}
+

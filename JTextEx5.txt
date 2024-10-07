@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JTextEx5 {
+    public static void main(String[] args) {
+        // Create a new JFrame
+        JFrame frame = new JFrame("JTextArea Example with ActionListener");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        // Create a JTextArea
+        JTextArea textArea = new JTextArea("Type something here...");
+        textArea.setBounds(50, 50, 300, 100);
+        
+        // Create a JLabel to display the output
+        JLabel label = new JLabel("Output will be shown here");
+        label.setBounds(50, 200, 300, 20);
+
+        // Create a JButton
+        JButton button = new JButton("Submit");
+        button.setBounds(150, 170, 100, 30);
+
+        // Add an ActionListener to the button
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Get text from the JTextArea and set it to the label
+                String inputText = textArea.getText();
+                label.setText(inputText);
+            }
+        });
+
+        // Add components to the frame
+        frame.setLayout(null);  // Use absolute positioning for simplicity
+        frame.add(textArea);
+        frame.add(button);
+        frame.add(label);
+
+        // Make the frame visible
+        frame.setVisible(true);
+    }
+}
+
+

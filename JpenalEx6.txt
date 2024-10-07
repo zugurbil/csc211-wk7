@@ -1,0 +1,83 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JpenalEx6{
+    public static void main(String[] args) {
+        // Create the JFrame
+        JFrame frame = new JFrame("Three Color Panel Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 400);
+        frame.setLayout(new GridLayout(3, 1)); // Use GridLayout for 3 panels in one column
+        // Panel 1: Red Panel
+        JPanel redPanel = new JPanel();
+        redPanel.setBackground(Color.RED);
+        JLabel redLabel = new JLabel("Red Panel: Enter Text");
+        JTextField redTextField = new JTextField(10);
+        JButton redButton = new JButton("Submit");
+        JLabel redOutputLabel = new JLabel("Output will appear here");
+        redPanel.add(redLabel);
+        redPanel.add(redTextField);
+        redPanel.add(redButton);
+        redPanel.add(redOutputLabel);
+
+	        // ActionListener for Red Panel Button
+        redButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String input = redTextField.getText();
+                redOutputLabel.setText("Red Panel says: " + input);
+	            }
+	        });
+
+	        // Panel 2: Blue Panel
+        JPanel bluePanel = new JPanel();
+        bluePanel.setBackground(Color.BLUE);
+        JLabel blueLabel = new JLabel("Blue Panel: Enter Text");
+        blueLabel.setForeground(Color.WHITE);  // Change label text to white for better contrast
+        JTextField blueTextField = new JTextField(10);
+        JButton blueButton = new JButton("Submit");
+        JLabel blueOutputLabel = new JLabel("Output will appear here");
+        blueOutputLabel.setForeground(Color.WHITE);  // Change output text to white for better contrast
+        bluePanel.add(blueLabel);
+        bluePanel.add(blueTextField);
+        bluePanel.add(blueButton);
+        bluePanel.add(blueOutputLabel);
+
+	        // ActionListener for Blue Panel Button
+        blueButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+	                String input = blueTextField.getText();
+	                blueOutputLabel.setText("Blue Panel says: " + input);
+	            }
+	        });
+
+       // Panel 3: Green Panel
+        JPanel greenPanel = new JPanel();
+        greenPanel.setBackground(Color.GREEN);
+        JLabel greenLabel = new JLabel("Green Panel: Enter Text");
+        JTextField greenTextField = new JTextField(10);
+        JButton greenButton = new JButton("Submit");
+        JLabel greenOutputLabel = new JLabel("Output will appear here");
+        greenPanel.add(greenLabel);
+        greenPanel.add(greenTextField);
+        greenPanel.add(greenButton);
+        greenPanel.add(greenOutputLabel);
+
+	        // ActionListener for Green Panel Button
+        greenButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              String input = greenTextField.getText();
+               greenOutputLabel.setText("Green Panel says: " + input);
+            }
+	        });
+
+        // Add the panels to the frame
+        frame.add(redPanel);  // Add Red Panel
+        frame.add(bluePanel); // Add Blue Panel
+        frame.add(greenPanel); // Add Green Panel
+
+        // Make the frame visible
+        frame.setVisible(true);
+	    }
+	}

@@ -1,0 +1,38 @@
+
+import java.awt.*;  
+import java.awt.event.*;  
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JLabelEx5 {
+    public static void main(String[] args) {
+        // Create a new JFrame
+        JFrame frame = new JFrame("JLabel Example with ActionListener");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 200);
+        
+        // Create a JLabel
+        JLabel label = new JLabel("Click the button to change this text");
+        label.setBounds(50, 50, 300, 20);
+
+        // Create a JButton
+        JButton button = new JButton("Click Me");
+        button.setBounds(150, 100, 100, 30);
+
+        // Add an ActionListener to the button
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                label.setText("Button Clicked!");
+            }
+        });
+
+        // Add components to the frame
+        frame.setLayout(null);  // Use absolute positioning for simplicity
+        frame.add(label);
+        frame.add(button);
+
+        // Make the frame visible
+        frame.setVisible(true);
+    }
+}

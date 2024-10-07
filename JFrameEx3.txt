@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class JButtonEx3 {
+    public static void main(String[] args) {
+
+        // Create a JFrame (window)
+        JFrame frame = new JFrame("JButton Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        // Create a JButton
+        JButton button = new JButton("Click Me!");
+        JOptionPane.showMessageDialog(frame,"Hello, Welcome to Javatpoint.");  
+
+        // Add an ActionListener to the button
+        button.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+               JOptionPane.showMessageDialog(frame, "Button Clicked!");
+          }
+         });
+
+	    // Add the button to the frame
+	    frame.add(button);
+
+	     // Make the frame visible
+	        frame.setVisible(true);
+	    }
+	}
+
